@@ -17,7 +17,11 @@ function SzovegKezeloFuggvenyek() {
                 {value.length === 0 ? <div >Még nem írt be egyetlen karaktert sem.</div>:
                 
                 <div>Beírt karakterek száma: {value.length}</div>}
-                <button></button>
+                <button onClick={() => setValue(value.toUpperCase())}>Nagybetűs</button>
+                <button onClick={() => setValue(value.toLowerCase())}>Kisbetűss</button>
+                <button onClick={() => setValue("")}>Visszaállít</button>
+                <button onClick={() => setValue(value.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '))}>minden Szókezdő nagybetű</button>
+                <button onClick={() => setValue(value.charAt(0).toUpperCase() + value.slice(1))}>mondatkezdő nagybetű</button>
             </div>
 
         </div>  
